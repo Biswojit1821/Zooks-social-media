@@ -1,0 +1,800 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <title>ZOOKS</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous">
+</head>
+
+<body>
+  <style media="screen">
+  *{
+    margin: 0;
+    padding: 0;
+    font-family: "poppins" ,sans-sans-serif;
+    box-sizing: border-box;
+  }
+  body{
+    background: #efefef;
+  }
+  nav
+  {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: #1876f2;
+    padding: 3px ;
+    position: sticky;
+    top: 0;
+    z-index: 1;
+  }
+  .logo{
+    width: 150px;
+    margin-right: 25px;
+    margin-left: 0;
+  }
+  .navl{
+    display: flex;
+    align-items: center;
+  }
+  .navl ul li{
+    list-style: none;
+    display: inline-block;
+  }
+  .nav ul li img{
+    width: 28px;
+    margin: 0 15px;
+  }
+  .navusericon img{
+    width: 40px;
+    border-radius: 50%;
+  }
+  .navusericon {
+    margin-left: 20px;
+  }
+  .navr{
+    display: flex;
+    align-items: center;
+  }
+  .searchbox{
+    background: #efefef;
+    width: 350px;
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    padding: 0 15px;
+  }
+  .searchbox img{
+    width: 18px;
+  }
+  .searchbox input{
+    width: 100%;
+    background: transparent;
+    padding: 10px;
+    outline: none;
+    border: 0;
+  }
+  .online{
+    position: relative;
+  }
+  .online::after{
+    content:"" ;
+    width: 7px;
+    height: 7px;
+    border: 2px solid #fff;
+    border-radius: 50%;
+    background-color: #41db51;
+    position: absolute;
+    bottom: 0 ;
+    right:0;
+  }
+  .container{
+    display: flex;
+    justify-content: space-between;
+    padding: 12px 5%;
+  }
+  .leftsbar{
+    /* background: #cbdffa; */
+    flex-basis: 25%;
+    position: sticky;
+    top: 70px;
+    align-self: flex-start;
+    height: 100vh;
+  }
+  .rightsbar{
+    /* background: #cbdffa; */
+    flex-basis: 25%;
+    position: sticky;
+    top: 70px;
+    align-self: flex-start;
+    height:100vh;
+    background: #fff;
+    padding: 20px;
+    border-radius: 4px;
+    color: #626262;
+  }
+  .msbar{
+    flex-basis: 46%;
+
+  }
+  .ilinks a , .shortlinks a{
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    margin-bottom: 30px;
+    color: #626262;
+    width: fit-content;
+  }
+  .ilinks a img{
+    width: 27px;
+    margin-right: 14px;
+  }
+  .ilinks a:last-child{
+    color: #4267B2;
+  }
+  .ilinks{
+    border-bottom: 1px solid #ccc;
+  }
+  .shortlinks a img{
+    width: 40px;
+    border-radius: 5px;
+    margin-left: 15px;
+  }
+  .shortlinks p{
+    margin: 25px 0;
+    color: #626262;
+    font-weight: 600;
+  }
+  .sbartitle{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 19px;
+
+  }
+  .rsbartitle h4{
+    font-size: 16px;
+    font-weight: 600px;
+  }
+  .sbartitle a{
+    text-decoration: none;
+    color: #1876f2;
+    font-size: 16px;
+  }
+  .event{
+    display: flex;
+    font-style: 15px;
+    margin-bottom: 20px;
+
+
+  }
+  .levent{
+    border-radius: 11px;
+    height: 62px;
+    width: 62px;
+    margin-right: 16px;
+    padding-top: 10px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 0 9px rgba(255, 0, 0, 0.5);
+  }
+  .event p{
+    font-size: 13px;
+
+  }
+  .event a{
+    font-size: 13px;
+    text-decoration: none;
+    color: #1876f2;
+  }
+  .levent span{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background: #1876f2;
+    color: #fff;
+    font-size: 10px;
+    padding: 5px 0;
+  }
+  .sidebar{
+    width: 100%;
+    margin-bottom: 20px;
+    border-radius: 4px;
+
+  }
+  .onlinelist{
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+
+  }
+  .onlinelist .online img{
+    width: 50px;
+    border-radius: 50%;
+
+  }
+  .onlinelist .online{
+    width: 40px;
+    border-radius: 50%;
+    margin-right: 15px;
+
+  }
+  .onlinelist .online::after{
+    top: unset;
+    bottom: 1px;
+  }
+  .storygallery{display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+
+
+  }
+  .story{
+    flex-basis: 18%;
+    padding-top: 32%;
+    position: relative;
+    background-image:linear-gradient(transparent,rgba(0, 0, 0, 0.5)),url(status-1.png);
+    background-position: center;
+    background-size: cover;
+    border-radius: 10px;
+  }
+  .story img{
+    position: absolute;
+    width: 45px;
+    border-radius: 50%;
+    top: 10px;
+    left: 10px;
+    border: 3px solid #1876f2;
+  }
+  .story p{
+    position: absolute;
+    bottom: 10px;
+    width: 100%;
+    text-align: center;
+    color: #fff;
+  }
+  .story1{
+      background-image:linear-gradient(transparent,rgba(0, 0, 0, 0.5)),url(biswojit.jpeg);
+  }
+  .story2{
+      background-image:linear-gradient(transparent,rgba(0, 0, 0, 0.5)),url(ozgeyagiz.jpg);
+  }
+  .story3{
+      background-image:linear-gradient(transparent,rgba(0, 0, 0, 0.5)),url(hande.jpg);
+  }
+  .story4{
+      background-image:linear-gradient(transparent,rgba(0, 0, 0, 0.5)),url(status-4.png);
+  }
+  .story5{
+      background-image:linear-gradient(transparent,rgba(0, 0, 0, 0.5)),url(hn.jpg);
+  }
+  .story.story1 img{
+    top: unset;
+    left: 50%;
+    bottom: 30px;
+    transform: translateX(-50%);
+    border: 0;
+    width: 35px;
+  }
+  .wpcontainrer{
+    width: 100%;
+    background: #fff;
+    border-radius: 5px;
+    padding: 19px;
+    color: #626262;
+
+  }
+  .userprofile{
+    display: flex;
+    align-items: center;
+  }
+  .userprofile img{
+    width: 50px;
+    border-radius: 50%;
+    margin-right: 10px;
+  }
+  .userprofile p{
+    margin-bottom: -5px;
+    font-weight: 400;
+    color: #626262;
+  }
+  .userprofile small{
+    font-size: 11px;
+  }
+  .postinput{
+    padding-left: 40px;
+    padding-top: 20px;
+
+  }
+  .postinput textarea{
+    width: 100%;
+    border: 0;
+    outline:0;
+    border-bottom: 1px solid #ccc;
+    background: transparent;
+    resize: none;
+  }
+  .apostlink{
+    display: flex;
+    margin-top: 10px;
+
+  }
+  .apostlink a{
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    color:#626262;
+    margin-right: 30px;
+    font-size: 14px;
+  }
+  .apostlink a img{
+    width: 19px;
+    margin-right: 11px;
+  }
+  .userprofile{
+    width: 100%;
+    background: #fff;
+    border-radius: 7px ;
+    padding: 19px;
+    color:#626262;
+    margin:20px 0;
+  }
+  .userprofile span{
+    font-size: 12px;
+    color: #9a9a9a;
+  }
+  .text{
+    color:#9a9a9a;
+    margin: 15px 0;
+    font-size: 15px;
+
+  }
+  .text span{
+    color:#626262;
+    font-weight: 500;
+  }
+  .text a{
+    color: #1876f2;
+    text-decoration: none;
+
+  }
+  .postimg{
+    width:100%;
+    border-radius: 2px;
+    margin-bottom: 4px;
+
+  }
+  .pcontainer{
+    width: 100%;
+    background: #fff;
+    border-radius: 6px;
+    padding: 20px;
+    color: #626262;
+    margin:20px 0
+  }
+  .rows{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .activity div img{
+    width: 15px;
+    margin-right: 10px;
+
+  }
+  .activity div{
+    display: inline-flex;
+    align-items: center;
+    margin-right: 30px;
+  }
+  .postprofile{
+    display: flex;
+    align-items: center;
+  }
+  .postprofile img{
+    width: 20px;
+    border-radius: 50%;
+    margin-right: 10px;
+  }
+  .loadbtn{
+    display: block;
+    margin: auto;
+    cursor: pointer;
+    padding: 5px 10 px;
+    border-radius: 1px solid #9a9a9a;
+    color: #626262;
+    background: transparent;
+    border-radius: 4px;
+
+  }
+  .footer{
+    text-align: center;
+    color: #9a9a9a;
+    padding: 10px 0 20px;
+    font-size: 13px;
+  }
+  .settings{
+    position: absolute;
+    width: 90%;
+    max-width: 350px;
+    /* height:500px; */
+    background: #fff;
+    box-shadow: 0  0  10px rgba(0, 0, 0, 0.3);
+    border-radius: 4px;
+    overflow: hidden;
+    top: 109%;
+    right: 5%;
+    max-height: 0;
+    transition: max-height 0.4s;
+  }
+  .settingsmth{
+    max-height: 450px;
+  }
+  .userprofile a{
+    font-size: 12px;
+    color: #1876f2;
+    text-decoration: none;
+
+  }
+  .settinginner{
+    padding: 20px;
+  }
+  .settinginner hr{
+    border:0;
+    height:1px;
+    background: #9a9a9a;
+    margin: 15px 0;
+  }
+  .settinglink{
+    display: flex;
+    align-items: center;
+    margin-left: 15px 0;
+
+  }
+  .settinglink .settingicon{
+    width: 38px;
+    margin-right: 10px;
+    border-radius: 50%;
+  }
+  .settinglink a{
+    display: flex;
+    flex:1;
+    align-items: center;
+    justify-content: space-between;
+    text-decoration: none;
+    color: #626262;
+
+  }
+
+  </style>
+  <nav>
+    <div class="navl">
+      <img src="LOGO1.jpeg" alt="logo" class="logo">
+      <ul>
+        <li><img src="notification.png" alt=""></li>
+        <li><img src="inbox.png" alt=""></li>
+        <li><img src="video.png" alt=""></li>
+      </ul>
+    </div>
+    <div class="navr">
+      <div class="searchbox">
+        <img src="search.png" alt="">
+        <input type="text" name="" value="search">
+
+      </div>
+      <div class="navusericon online" onclick="settingsmt()">
+        <img src="biswa.png" alt="">
+      </div>
+    </div>
+
+    <div class="settings">
+      <div class="settinginner">
+
+        <div class="userprofile">
+          <img src="biswojit.jpeg" alt="">
+          <div class="">
+            <p>Biswojit</p>
+            <a href="#">Profile</a>
+          </div>
+
+        </div>
+        <hr>
+        <div class="userprofile">
+          <img src="feedback.png" alt="">
+          <div class="">
+            <p>Any problem</p>
+            <a href="#">Just tell me</a>
+          </div>
+
+        </div>
+        <hr>
+        <div class="settinglink">
+          <img src="setting.png" alt="" class="settingicon">
+          <a href="#">Settings and security <img src="arrow.png" width="10px" alt=""></a>
+
+        </div>
+        <div class="settinglink">
+          <img src="help.png" alt="" class="settingicon">
+          <a href="#">Help<img src="arrow.png" width="10px" alt=""></a>
+
+        </div>
+        <div class="settinglink">
+          <img src="display.png" alt="" class="settingicon">
+          <a href="#">Display and acess <img src="arrow.png" width="5px" alt=""></a>
+
+        </div>
+        <div class="settinglink">
+          <img src="logout.png" alt="" class="settingicon">
+          <a href="#">Logout<img src="arrow.png" width="10px" alt=""></a>
+
+        </div>
+      </div>
+
+
+    </div>
+  </nav>
+  <div class="container">
+    <div class="leftsbar">
+      <div class="ilinks">
+        <a href="#"><img src="news.png" alt="">Recent News</a>
+        <a href="#"><img src="friends.png" alt="">Friends</a>
+        <a href="#"><img src="group.png" alt="">Group</a>
+        <a href="#"><img src="marketplace.png" alt="">Shopping</a>
+        <a href="#"><img src="watch.png" alt="">Trending videos</a>
+        <a href="#">watch more</a>
+      </div>
+      <div class="shortlinks">
+        <p>Your Shortcut</p>
+        <a href="#"><img src="shortcut-1.png" alt="">WEB Developer</a>
+        <a href="#"><img src="shortcut-2.png" alt="">WEB Design</a>
+        <a href="#"><img src="shortcut-3.png" alt="">Full stack</a>
+        <a href="#"><img src="shortcut-4.png" alt="">Bloggers</a>
+      </div>
+
+    </div>
+    <div class="msbar">
+      <div class="storygallery">
+        <div class="story story1">
+          <img src="upload.png" alt="">
+          <p>Post story</p>
+
+        </div>
+        <div class="story story2">
+          <img src="ozge.jpg" alt="">
+          <p>Ozge Yagiz</p>
+
+        </div>
+        <div class="story story3">
+          <img src="hande-Ercel.jpg" alt="">
+          <p>Hande Ercel</p>
+
+        </div>
+        <div class="story story4">
+          <img src="member-3.png" alt="">
+          <p>Neelam</p>
+
+        </div>
+        <div class="story story5">
+          <img src="hande.jpg" alt="">
+          <p>Hande Ercel</p>
+
+        </div>
+
+      </div>
+
+
+
+
+
+
+
+
+      <div class="wpcontainrer">
+        <div class="userprofile">
+          <img src="biswojit.jpeg" alt="">
+          <div class="">
+            <p>Biswojit</p>
+            <small>public<i class="fas fa-caret-down"></i></small>
+          </div>
+
+        </div>
+        <div class="postinput">
+          <textarea rows="4" placeholder="Write a Post..."></textarea>
+          <div class="apostlink">
+            <a href="#"><a href="#"><img src="live-video.png">Live</a>
+              <a href="#"><a href="#"><img src="photo.png">Photo</a>
+                <a href="#"><a href="#"><img src="feeling.png">Emoji</a>
+
+          </div>
+
+        </div>
+
+      </div>
+      <div class="pcontainer">
+        <div class="userprofile">
+          <img src="biswojit.jpeg" alt="">
+          <div class="">
+            <p>Biswojit</p>
+            <span>July 18 2021 5:55PM</span>
+
+          </div>
+
+        </div>
+        <p class="text">Hello guyz i am on instagram . To follow me click on the TAG <a href="https://www.instagram.com/invites/contact/?i=co2bdoo5b1t&utm_content=3ptbmft"> @ITZZ_KANHA</a>
+          <img src="biswojit.jpeg" alt="" class="postimg">
+        <div class="row">
+          <div class="activity">
+            <div class="">
+              <img src="like-blue.png" alt="">585K
+              <img src="comments.png" alt="">320K
+              <img src="share.png" alt="">20k
+            </div>
+          </div>
+          <div class="postprofile">
+            <img src="hn.jpg" alt=""><i class="fas fa-caret-down"></i>
+          </div>
+        </div>
+      </div>
+      <div class="pcontainer">
+        <div class="userprofile">
+          <img src="biswojit.jpeg" alt="">
+          <div class="">
+            <p>Biswojit</p>
+            <span>July 18 2021 5:55PM</span>
+
+          </div>
+
+        </div>
+        <p class="text">Hande Ercel 😍😍😍
+          <img src="Hande.jpg" alt="" class="postimg">
+        <div class="row">
+          <div class="activity">
+            <div class="">
+              <img src="like-blue.png" alt="">1M
+              <img src="comments.png" alt="">390K
+              <img src="share.png" alt="">100k
+            </div>
+          </div>
+          <div class="postprofile">
+            <img src="hn.jpg" alt=""><i class="fas fa-caret-down"></i>
+          </div>
+        </div>
+      </div>
+      <div class="pcontainer">
+        <div class="userprofile">
+          <img src="biswojit.jpeg" alt="">
+          <div class="">
+            <p>Biswojit</p>
+            <span>July 18 2021 5:55PM</span>
+
+          </div>
+
+        </div>
+        <p class="text">👌👌👩👩👩👩
+          <img src="Hande-Ercel.jpg" alt="" class="postimg">
+        <div class="row">
+          <div class="activity">
+            <div class="">
+              <img src="like-blue.png" alt="">585K
+              <img src="comments.png" alt="">320K
+              <img src="share.png" alt="">20k
+            </div>
+          </div>
+          <div class="postprofile">
+            <img src="hn.jpg" alt="">
+          </div>
+        </div>
+      </div>
+      <div class="pcontainer">
+        <div class="userprofile">
+          <img src="biswojit.jpeg" alt="">
+          <div class="">
+            <p>Biswojit</p>
+            <span>July 18 2021 5:55PM</span>
+
+          </div>
+
+        </div>
+        <p class="text">NO CAPTION NEEDED
+          <img src="hand.jpg" alt="" class="postimg">
+        <div class="row">
+          <div class="activity">
+            <div class="">
+              <img src="like-blue.png" alt="">585K
+              <img src="comments.png" alt="">320K
+              <img src="share.png" alt="">20k
+            </div>
+          </div>
+          <div class="postprofile">
+            <img src="hande.jpg" alt=""><i class="fas fa-caret-down"></i>
+          </div>
+        </div>
+      </div>
+
+      <button type="button" name="button" class="loadbtn">Load more</button>
+
+
+    </div>
+    <div class="rightsbar">
+      <div class="sbartitle">
+        <h4>Events</h4>
+        <a href="#">Watch All</a>
+
+      </div>
+      <div class="event">
+        <div class="levent">
+          <h3>07</h3>
+          <span>January</span>
+        </div>
+        <div class="revent">
+          <h4>ZOOKS</h4>
+          <p><i class="fas fa-map-signs"></i>Bhubaneswar</p>
+          <a href="#">Learn more</a>
+        </div>
+
+      </div>
+      <div class="event">
+        <div class="levent">
+          <h3>18</h3>
+          <span>July</span>
+        </div>
+        <div class="revent">
+          <h4>BIRTHDAY</h4>
+          <p><i class="fas fa-search-location"></i>Bhubaneswar</p>
+          <a href="#">Learn more</a>
+        </div>
+
+      </div>
+      <div class="sbartitle">
+        <h4>Sponsorship</h4>
+        <a href="#">Exit</a>
+      </div>
+      <img src="logo.jpeg" alt="" class="sidebar">
+      <div class="sbartitle">
+        <h4>Gossips</h4>
+        <a href="#">Talks</a>
+      </div>
+      <div class="onlinelist">
+        <div class="online">
+          <img src="hande.jpg" alt="">
+
+        </div>
+        <span>Hande Ercel</span>
+
+      </div>
+      <div class="onlinelist">
+        <div class="online">
+          <img src="hande-ercel.jpg" alt="">
+
+        </div>
+        <span>Hande Ercel</span>
+
+      </div>
+      <div class="onlinelist">
+        <div class="online">
+          <img src="hn.jpg" alt="">
+        </div>
+        <span>Hande Ercel</span>
+      </div>
+
+
+    </div>
+
+
+  </div>
+  </div>
+
+  <div class="footer">
+    <p>copyright 2022 - ZOOKS</p>
+
+  </div>
+<!-- <script type="C:\Users\KIIT\OneDrive\Desktop\web develop\HTML PERSONAL SITE\zooks\script.js">
+
+</script> -->
+</body>
+
+</html>
